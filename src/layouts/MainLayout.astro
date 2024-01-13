@@ -22,9 +22,9 @@ import SideBar from '../components/SideBar.astro';
 <slot/>
 
     <!-- Compiled and minified JavaScript -->
-    <script client:load src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-    <script client:load>
+    <script type="module">
         document.addEventListener('DOMContentLoaded', function() {
             var elems = document.querySelectorAll('.sidenav');
             M.Sidenav.init(elems);

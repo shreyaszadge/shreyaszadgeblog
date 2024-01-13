@@ -2,11 +2,21 @@
 import MainLayout from "./MainLayout.astro";
 
 const { frontmatter } = Astro.props;
+
+const SiteName="shreyas Zadge";
 ---
 <MainLayout>
 
  
-  
+  <nav class="purple accent-3">
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo left" onclick="openNav()">{SiteName}</a>
+      <ul id="nav-mobile" class="right ">
+
+        <li><a  onclick="openNav()"><i class="material-icons">more_vert</i></a></li>
+      </ul>
+    </div>
+  </nav>
 
 
 
