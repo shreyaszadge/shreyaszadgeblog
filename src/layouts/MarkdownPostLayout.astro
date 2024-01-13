@@ -1,0 +1,38 @@
+---
+import MainLayout from "./MainLayout.astro";
+
+const { frontmatter } = Astro.props;
+---
+<MainLayout>
+
+ 
+  
+
+
+
+
+  <section class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col s12 m10 offset-m1">
+          <div class="card">
+            <div class="card-content">
+              <h1 class="card-title">Title:{frontmatter.title}</h1>
+              <p>Publication Date:{frontmatter.pubDate.slice(0, 10)}</p>
+              <p>Oraganization:{frontmatter.org}</p>
+              <p>Description:<em>{frontmatter.description}</em></p>
+              <p>Written by: {frontmatter.author}</p>
+
+              
+            </div>
+          </div>
+          <img class="responsive-img" src={frontmatter.image.url} alt={frontmatter.image.alt} />
+          <div class="content">
+            <slot />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  </MainLayout>

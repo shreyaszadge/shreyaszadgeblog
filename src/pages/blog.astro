@@ -1,9 +1,40 @@
-<body>
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/blog/">Blog</a>
+---
+import MainLayout from '../layouts/MainLayout.astro'
+const allPosts = await Astro.glob('../pages/posts/*.md');
+const pageTitle = "Blog page";
+---
+<MainLayout>
+  <div class="container">
+    <div class="row center">
+      <div class="col s12 m10 offset-m1">
+        <h1 class="header">MyBlogs</h1>
+      </div>
+      <div class="col s12 m8 offset-m2">
+        <h4 class="light">All Blogs </h4>
+      </div>
+    </div>
+
+   
+    <br>
+
+  </div>
+  {  allPosts.map((post) =>
+  <div class="container">
+  <div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" width="50" height="300" src={post.frontmatter.image.url}>
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4">{post.frontmatter.title}<i class="material-icons right">more_vert</i></span>
+      <a href={post.url} class="waves-effect waves-light btn purple accent-3"><i class="material-icons left">link</i>Read More</a>
+
+      </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">{post.frontmatter.description}<i class="material-icons right">close</i></span>
+    </div>
+  </div></div>
+)}
+
+
   
-    <h1>My Astro Site</h1>
-    <h1>My Astro Learning Blog</h1>
-    <p>This is where I will post about my journey learning Astro.</p>
-  </body>
+</MainLayout>

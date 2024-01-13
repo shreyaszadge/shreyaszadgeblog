@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body>
+
+    
+
+    <nav>
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo left" onclick="openNav()">Logo</a>
+          <ul id="nav-mobile" class="right ">
+
+            <li><a  onclick="openNav()"><i class="material-icons">more_vert</i></a></li>
+          </ul>
+        </div>
+      </nav>
+   
+
+    <ul id="slide-out" class="sidenav">
+     
+        <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+        <li><a href="#!">Second Link</a></li>
+        <li><div class="divider"></div></li>
+        <li><a class="subheader">Subheader</a></li>
+        <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+    </ul>
+
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.sidenav');
+            M.Sidenav.init(elems);
+        });
+
+        function openNav() {
+            var instance = M.Sidenav.getInstance(document.querySelector('.sidenav'));
+            instance.open();
+        }
+    </script>
+</body>
+</html>

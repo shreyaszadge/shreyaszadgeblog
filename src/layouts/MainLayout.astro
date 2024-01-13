@@ -1,0 +1,48 @@
+---
+import SideBar from '../components/SideBar.astro';
+
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+<body>
+
+   
+<SideBar/>
+  
+<slot/>
+
+    <!-- Compiled and minified JavaScript -->
+    <script client:load src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script client:load>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.sidenav');
+            M.Sidenav.init(elems);
+        });
+
+        function openNav() {
+            var instance = M.Sidenav.getInstance(document.querySelector('.sidenav'));
+            instance.open();
+        }
+    </script>
+
+    <footer>
+        <div class="footer-copyright">
+            <div class="container">
+            © 2024 zorg tech
+            </div>
+          </div>
+        </footer>
+
+</body>
+</html>

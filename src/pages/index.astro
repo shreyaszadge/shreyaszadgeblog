@@ -1,9 +1,55 @@
-<body>
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/blog/">Blog</a>
-  
-    <h1>My Astro Site</h1>
-    <h1>My Astro Learning Blog</h1>
-    <p>This is where I will post about my journey learning Astro.</p>
-  </body>
+---
+import MainLayout from '../layouts/MainLayout.astro';
+const pageTitle = "Home Page";
+---
+<MainLayout pageTitle={pageTitle}>
+  <div class="container">
+    <div class="row center">
+      <div class="col s12 m10 offset-m1">
+        <h1 class="header">Welcome To MY Website</h1>
+      </div>
+      <div class="col s12 m8 offset-m2">
+        <h4 class="light">Software Developer and Python Developer </h4>
+      </div>
+    </div>
+    <div class="row center">
+      <a href="/blog"  class="btn-large waves-effect waves-light">Read Blog</a>
+      <a href="/about" id="upgrade-button" class="btn-large waves-effect waves-light">About Me</a>
+    </div>
+   
+    <br>
+
+  </div>
+  <div class="row">
+    <div class="col s12 m10 offset-m1">
+
+      <!--   Promo Section   -->
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="center promo">
+            <i class="material-icons">computer</i>
+            <p class="promo-caption">Passion for Technology</p>
+            <p class="light center">Begin by expressing your genuine passion for technology and coding. Share what sparked your interest in the world of programming and how it has evolved over time. This sets the tone for your readers, letting them know that your blog is written by someone who loves and enjoys the subject matter.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="center promo">
+            <i class="material-icons">book</i>
+            <p class="promo-caption">Purpose of the Blog</p>
+            <p class="light center">Clearly outline the purpose of your blog. Explain what readers can expect to find, whether it's in-depth coding tutorials, insights into the latest technologies, or personal experiences and challenges you've encountered in your coding journey. This gives readers a clear understanding of what value they can derive from your blog.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="center promo">
+            <i class="material-icons">group</i>
+            <p class="promo-caption">Community Engagement</p>
+            <p class="light center">Emphasize your commitment to building a community of like-minded individuals. Mention your willingness to engage with readers, answer questions, and foster discussions. Encourage readers to share their thoughts, experiences, and ideas in the comments section. This creates a sense of collaboration and makes your blog not just a one-way information source but a platform for meaningful interaction.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+              </div>
+             
+</MainLayout>
